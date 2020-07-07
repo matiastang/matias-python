@@ -33,7 +33,7 @@ def url_decode(url):
     """
     return urllib.unquote(url).decode('utf-8', 'replace').encode('gbk', 'replace')
 ```
-[python编码](https://github.com/matiastang/python-story/blob/master/src/python_encod_decode.py)
+[python编解码](https://github.com/matiastang/python-story/blob/master/src/python_encod_decode.py)
 
 python3：
 ```py
@@ -55,4 +55,4 @@ def url_decode(url: str):
     """
     return parse.unquote(url)
 ```
-[python3编码](https://github.com/matiastang/python-story/blob/master/src/python3_encod_decode.py)
+[python3编解码](https://github.com/matiastang/python-story/blob/master/src/python3_encod_decode.py)
