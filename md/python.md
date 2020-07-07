@@ -16,6 +16,12 @@
 
 `#!/usr/bin/python3`这种写法在unix系统中表示这个脚本文件的默认启动程序，通常写在第一行，其中 `/usr/bin/python3` 是那个程序的路径(命令行输入`where python`,`where python3`可以查看`python`的安装位置)，`#` 符号在 `shell`、`python` 中均为注释的标志，将类似于 `#!/bin/bash` 的一行注释写在脚本文件的第一行，可以使脚本的使用更加方便。
 
+`python`运行环境，如下也可以查看安装位置：
+```py
+import sys
+print(sys.path)
+```
+
 ```py
 def main():
     print('hello, world!')
