@@ -1,12 +1,46 @@
 <!-- TOC -->
 
 - [python](#python)
+    - [#!/usr/bin/python3](#usrbinpython3)
     - [函数传参](#函数传参)
-    - [NameError: name '****' is not defined](#nameerror-name--is-not-defined)
+    - [报错处理](#报错处理)
+        - [permission denied](#permission-denied)
+        - [NameError: name '****' is not defined](#nameerror-name--is-not-defined)
+        - [SyntaxError: Non-ASCII character '\xe7'](#syntaxerror-non-ascii-character-\xe7)
 
 <!-- /TOC -->
 
 # python
+
+## #!/usr/bin/python3
+
+`#!/usr/bin/python3`这种写法在unix系统中表示这个脚本文件的默认启动程序，通常写在第一行，其中 `/usr/bin/python3` 是那个程序的路径(命令行输入`where python`,`where python3`可以查看`python`的安装位置)，`#` 符号在 `shell`、`python` 中均为注释的标志，将类似于 `#!/bin/bash` 的一行注释写在脚本文件的第一行，可以使脚本的使用更加方便。
+
+```py
+def main():
+    print('hello, world!')
+
+if __name__ == '__main__':
+    main()
+```
+需要如下执行：
+```
+python3 main.py
+```
+如果添加了`#!/usr/bin/python3`:
+```py
+#!/usr/bin/python3
+
+def main():
+    print('hello, world!')
+
+if __name__ == '__main__':
+    main()
+```
+运行时便可以当作普通`shell`脚本那样运行：
+```
+./main.py
+```
 
 ## 函数传参
 
@@ -32,10 +66,35 @@ python中函数传递参数有四种形式：
 3. 将多余出的即键值对行后的零散实参打包组成一个tuple传递给*args
 4. 将多余的key=value形式的实参打包正一个dicrionary传递给**kargs
 
-## NameError: name '****' is not defined
+## 报错处理
+
+### permission denied
+
+没有权限，执行下面命令设置权限：
+```
+sudo chmod -R 777 设置权限的路径
+sudo chmod -R 777 /Users/yunxi/Desktop/yunxitech/matias_github/python-story
+```
+* `-R` 是指级联应用到目录里的所有子目录和文件
+* `777` 是所有用户都拥有最高权限
+
+### NameError: name '****' is not defined
 
 python函数的应用一般需要：先定义、后调用
 如果函数定义在调用之后，执行将报错：
 ```
 NameError: name '****' is not defined
+```
+
+### SyntaxError: Non-ASCII character '\xe7'
+
+python2运行时报错：
+```
+SyntaxError: Non-ASCII character '\xe7' in file python_encod_decode.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+```
+当在Python 2.X文件中写中文注释或输出中文时候，经常会出现编译错误（在Python 3.X中没有这种错误。）这是因为Python 2.X的默认编码文件是用ASCII码
+
+头部加上如下代码：
+```
+#coding=utf-8
 ```
