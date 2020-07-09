@@ -3,6 +3,7 @@
 - [python](#python)
     - [#!/usr/bin/python3](#usrbinpython3)
     - [函数传参](#函数传参)
+    - [使用 python 执行管道命令](#使用-python-执行管道命令)
     - [报错处理](#报错处理)
         - [permission denied](#permission-denied)
         - [NameError: name '****' is not defined](#nameerror-name--is-not-defined)
@@ -71,6 +72,10 @@ python中函数传递参数有四种形式：
 2. args = value 形式的实参赋值给行参
 3. 将多余出的即键值对行后的零散实参打包组成一个tuple传递给*args
 4. 将多余的key=value形式的实参打包正一个dicrionary传递给**kargs
+
+## 使用 python 执行管道命令
+
+[使用 python 执行管道命令](http://www.ccike.com/?p=118)
 
 ## 报错处理
 
