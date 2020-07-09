@@ -3,6 +3,7 @@
 - [python2与python3](#python2与python3)
     - [typing模块的作用](#typing模块的作用)
     - [SyntaxError: Non-ASCII character '\xe7'](#syntaxerror-non-ascii-character-\xe7)
+    - [TypeError: a bytes-like object is required, not 'str'](#typeerror-a-bytes-like-object-is-required-not-str)
 
 <!-- /TOC -->
 
@@ -29,4 +30,17 @@ SyntaxError: Non-ASCII character '\xe7' in file python_encod_decode.py on line 1
 头部加上如下代码：
 ```
 #coding=utf-8
+```
+
+## TypeError: a bytes-like object is required, not 'str'
+
+python3和Python2在套接字返回值解码上有区别。
+
+解决办法非常的简单，只需要用上python的bytes和str两种类型转换的函数encode()、decode()即可！
+
+str通过encode()方法可以编码为指定的bytes；
+反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法；
+```
+str = 'this is fujieace.com test'
+os.write(fd,bytes(str,'UTF-8'))
 ```
