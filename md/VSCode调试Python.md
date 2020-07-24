@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2020-07-09 10:09:59
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-07-24 17:57:26
+--> 
 # VSCode调试Python
 
 [python调试VSCode官方](https://code.visualstudio.com/docs/python/debugging#_set-configuration-options)
@@ -50,3 +58,38 @@
 ```
 
 `Python`的调试和`C++`基本相同，单击右侧菜单栏中的蜘蛛图标，进入`Debug`。可以在程序行号上单击设置断点，`F11`单步执行，在左侧的`Variable`中观看变量的取值等。
+
+## 问题
+
+### ModuleNotFoundError: No module named '****'
+
+`VS Code` 进行编程`python`时，导入自定义的`Python`包，报错：`No module named '****'`
+
+1. 方案一
+
+如果是`pip3`导入的，可能是默认路径(`/usr/bin/python3`)不对，需要修改为(`/usr/local/bin/python3`)后尝试。
+可以添加`.workspace`文件，然后添加`python.pythonPath`。
+```
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python3"
+	}
+}
+```
+2. 方案二
+
+* 如果在当前文件目录底下可以找到导入的包，那么可以直接使用from ... import ...
+* 如果在当前文件目录底下找不到导入的包，则需要向sys.path添加包的所在的绝对位置。
+```py
+import sys,os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # __file__获取执行文件相对路径，整行为取上一级的上一级目录
+sys.path.append(BASE_DIR)
+```
+3. 方案三
+
+[VSCode配置python环境及创建虚拟环境方法](https://www.jianshu.com/p/bbf2ad02841c)
