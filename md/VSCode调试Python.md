@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: sueRimn
- * @Date: 2020-07-09 10:09:59
- * @LastEditors: sueRimn
- * @LastEditTime: 2020-07-24 17:57:26
---> 
 # VSCode调试Python
 
 [python调试VSCode官方](https://code.visualstudio.com/docs/python/debugging#_set-configuration-options)
