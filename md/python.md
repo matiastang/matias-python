@@ -1,17 +1,139 @@
 <!-- TOC -->
 
 - [python](#python)
-    - [#!/usr/bin/python3](#usrbinpython3)
-    - [函数传参](#函数传参)
-    - [使用 python 执行管道命令](#使用-python-执行管道命令)
-    - [报错处理](#报错处理)
-        - [permission denied](#permission-denied)
-        - [NameError: name '****' is not defined](#nameerror-name--is-not-defined)
-        - [SyntaxError: Non-ASCII character '\xe7'](#syntaxerror-non-ascii-character-\xe7)
+  - [输入文件路径，函数名称](#输入文件路径函数名称)
+  - [os.path.dirname](#ospathdirname)
+  - [os.path.dirname(__file__)的使用](#ospathdirnamefile的使用)
+  - [模块引用](#模块引用)
+    - [获取当前路径](#获取当前路径)
+    - [跨目录引用](#跨目录引用)
+    - [引用模块](#引用模块)
+    - [搜索顺序](#搜索顺序)
+    - [Python中的包](#python中的包)
+    - [python2中.pyc文件](#python2中pyc文件)
+  - [#!/usr/bin/python3](#usrbinpython3)
+  - [函数传参](#函数传参)
+  - [使用 python 执行管道命令](#使用-python-执行管道命令)
+  - [报错处理](#报错处理)
+    - [permission denied](#permission-denied)
+    - [NameError: name '****' is not defined](#nameerror-name--is-not-defined)
+    - [SyntaxError: Non-ASCII character '\xe7'](#syntaxerror-non-ascii-character-xe7)
 
 <!-- /TOC -->
 
 # python
+
+## 输入文件路径，函数名称
+
+```
+全路径文件：__file__
+文件名：   os.path.basename(__file__)
+函数名:    __name__
+行号：     sys._getframe().f_lineno
+```
+
+## os.path.dirname
+
+语法：os.path.dirname(path) 
+功能：去掉文件名，返回目录 
+```
+print(os.path.dirname('W:\Python_File\juan之购物车.py'))
+#结果
+#W:\Python_File
+print(os.path.dirname('W:\Python_File'))
+#结果
+#W:\
+```
+## os.path.dirname(__file__)的使用
+
+(1).当"print os.path.dirname(__file__)"所在脚本是以完整路径被运行的， 那么将输出该脚本所在的完整路径，比如：
+```
+python d:/pythonSrc/test/test.py
+那么将输出 d:/pythonSrc/test
+```
+(2).当"print os.path.dirname(__file__)"所在脚本是以相对路径被运行的， 那么将输出空目录，比如：
+```
+python test.py
+那么将输出空字符串
+```
+
+## 模块引用
+
+每个以.py 结尾的thon 文件就是一个Python 模块(Module)。
+一个模块只会被导入一次，不管你执行了多少次import。这样可以防止导入模块被一遍又一遍地执行。
+
+### 获取当前路径
+```
+方法一：
+import sys,os
+os.getcwd()#然后就可以看见结果了
+
+方法二：
+import os
+os.path.dirname(os.path.realpath('__file__'))#注意：添加单引号，当前python文件的上级目录
+```
+
+### 跨目录引用
+
+python本身不支持跨目录调用文件。
+将父目录（需要调用文件所在目录）加入到sys.path (python的搜索模块的路径)，之后则可以添加该目录下的任何文件了。
+```
+import sys,os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # __file__获取执行文件相对路径，整行为取上一级的上一级目录
+sys.path.append(BASE_DIR)
+```
+
+### 引用模块
+
+python2和python3区别比较大。
+查看python_import中的c.py文件，了解更多。
+
+* import 语句
+
+模块定义好后，我们可以使用 import 语句来引入模块，语法如下：
+```
+import module1[, module2[,... moduleN]]
+```
+
+* from…import 语句
+
+Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中。语法如下：
+```
+from modname import name1[, name2[, ... nameN]]
+```
+
+* from…import* 语句
+```
+from modname import *
+```
+
+### 搜索顺序
+
+当你导入一个模块，Python 解析器对模块位置的搜索顺序是：
+
+1、当前目录
+2、如果不在当前目录，Python 则搜索在 shell 变量 `PYTHONPATH` 下的每个目录。
+3、如果都找不到，Python会察看默认路径。UNIX下，默认路径一般为`/usr/local/lib/python/`。
+模块搜索路径存储在 ``system` 模块的 `sys.path` 变量中。变量里包含当前目录，`PYTHONPATH`和由安装过程决定的默认目录。
+
+### Python中的包
+
+包是一个分层次的文件目录结构，它定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。
+简单来说，包就是文件夹，但该文件夹下必须存在 `__init__.py` 文件, 该文件的内容可以为空。`__init__.py` 用于标识当前文件夹是一个包。
+
+### python2中.pyc文件
+
+在上述的各种自定义模块调用的操作后，如果回到之前新建的目录再多看一眼，相信不难发现，多出了几个.pyc文件，比如上面的b1.pyc、__init__.pyc，为什么会生成这些pyc文件，pyc文件又是有什么作用呢，我查阅了点资料在此说一下我的理解。
+首先，来看一下python的运行和编译机制的几个步骤：
+python运行自然要依赖解释器，解释器会将python源码转换为字节码，然后再执行转换好的字节码。
+那么当我们在引入调用一些模块时……
+模块加载的过程中，源码就被虚拟机（解释器）翻译成了PyCodeObject对象（也就是字节码）
+将PyCodeObject写入了CPU，下次运行将直接从内存中进行读取指令并执行程序
+执行结束后，根据执行的方式决定是否将执行的结果写回硬盘，也就是复制到.pyc文件中
+当再次执行时，先检查是否有.pyc文件，有的话，再检查字节码文件与自身的修改时间是否一致，一致则直接运行.pyc文件，不一致或是没有字节码文件则从新执行前面三个 步骤。
+所以，我们前面调用过的模块都有生成一个.pyc文件。
+从上面的步骤进行分析，就可以看出.pyc文件相对与.py文件来说，由于是执行过并写入内存空间的，所以加载速度会比.py文件要快，可以加速程序的运行。
+当然了，由于执行起来.pyc和.py是一样的，.py是直接以源码的形式进行呈现，而.pyc只是字节码文件，在某种程度上来说，还可以防止代码被偷看，具有一定的隐藏效果……
 
 ## #!/usr/bin/python3
 
