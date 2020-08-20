@@ -11,6 +11,7 @@
     - [搜索顺序](#搜索顺序)
     - [Python中的包](#python中的包)
     - [python2中.pyc文件](#python2中pyc文件)
+    - [python3中的.pyc文件](#python3中的pyc文件)
   - [#!/usr/bin/python3](#usrbinpython3)
   - [函数传参](#函数传参)
   - [使用 python 执行管道命令](#使用-python-执行管道命令)
@@ -134,6 +135,18 @@ python运行自然要依赖解释器，解释器会将python源码转换为字�
 所以，我们前面调用过的模块都有生成一个.pyc文件。
 从上面的步骤进行分析，就可以看出.pyc文件相对与.py文件来说，由于是执行过并写入内存空间的，所以加载速度会比.py文件要快，可以加速程序的运行。
 当然了，由于执行起来.pyc和.py是一样的，.py是直接以源码的形式进行呈现，而.pyc只是字节码文件，在某种程度上来说，还可以防止代码被偷看，具有一定的隐藏效果……
+
+### python3中的.pyc文件
+
+python3中的.pyc文件在__pycache__文件夹中。
+
+pyc是编译py之后生成的本地文件。一般当我们想发布系统的时候不想让别人看到源代码，所以要提前生成pyc文件。
+现今网上有很多介绍如何生成pyc的文章，但是在python3之后发现其生产pycache目录下，而不是与源文件同一目录。
+那么如何让python3实现生成的pyc与源代码在同一目录呢，使用`python3 -m compileall -b .`
+
+1. 生产pyc文件: python3 -m compileall -b .
+2. 删除py文件: find . -name “*.py” |xargs rm -rf
+3. 删除pycache目录: find . -name “pycache” |xargs rm -rf
 
 ## #!/usr/bin/python3
 
