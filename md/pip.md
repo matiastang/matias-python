@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 14:51:42
  * @LastEditors: matiastang
- * @LastEditTime: 2022-07-26 15:15:50
+ * @LastEditTime: 2022-07-26 17:35:31
  * @FilePath: /matias-python/md/pip.md
  * @Description: pip
 -->
@@ -146,3 +146,31 @@ setuptools       49.2.1
 six              1.15.0
 wheel            0.33.1
 ```
+
+## 使用镜像地址
+
+pip install -i 国内镜像地址 包名
+
+例如： pip install -i  https://mirrors.aliyun.com/pypi/simple/ numpy
+
+
+
+国内常用源镜像地址：
+
+清华：https://pypi.tuna.tsinghua.edu.cn/simple
+
+阿里云：http://mirrors.aliyun.com/pypi/simple/
+
+中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+
+华中理工大学：http://pypi.hustunique.com/
+
+山东理工大学：http://pypi.sdutlinux.org/ 
+
+豆瓣：http://pypi.douban.com/simple/
+
+note：新版ubuntu要求使用https源，要注意
+
+生成: pip freeze > requirements.txt 
+
+导入: pip install -r requirements.txt
