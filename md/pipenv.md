@@ -2,11 +2,13 @@
  * @Author: matiastang
  * @Date: 2022-07-26 15:31:08
  * @LastEditors: matiastang
- * @LastEditTime: 2022-07-26 15:34:15
+ * @LastEditTime: 2022-07-29 16:34:20
  * @FilePath: /matias-python/md/pipenv.md
  * @Description: pipenv
 -->
 # pipenv
+
+[pipenv 使用](https://cdn.modb.pro/db/29564)
 
 `Python.org` 推荐的名为 `Pipenv` 的 `Python` 包管理器也可以用来安装 `Python` 应用。与 `Pip` 不同，`Pipenv` 默认会自动创建虚拟环境。这意味着你不再需要为项目手动创建虚拟环境。
 
@@ -28,3 +30,5 @@ source ~/.zshrc
 $ pipenv --version
 pipenv, version 2021.5.29
 ```
+
+## 创建虚拟环境
