@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 14:54:18
  * @LastEditors: matiastang
- * @LastEditTime: 2022-07-26 15:17:08
+ * @LastEditTime: 2022-08-03 16:38:57
  * @FilePath: /matias-python/md/pip3.md
  * @Description: pip3
 -->
@@ -52,4 +52,11 @@ powerline-status 2.7
 setuptools       49.2.1
 six              1.15.0
 wheel            0.33.1
+```
+
+## 使用pip3 install 包太慢
+
+添加文件系统地址
+```
+pip3 install matplotlib -i https://pypi.douban.com/simple
 ```
