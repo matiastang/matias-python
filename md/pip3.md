@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 14:54:18
  * @LastEditors: matiastang
- * @LastEditTime: 2022-08-03 16:38:57
+ * @LastEditTime: 2022-08-09 16:45:33
  * @FilePath: /matias-python/md/pip3.md
  * @Description: pip3
 -->
@@ -59,4 +59,10 @@ wheel            0.33.1
 添加文件系统地址
 ```
 pip3 install matplotlib -i https://pypi.douban.com/simple
+```
+
+## 安装`arch -arm64`包
+
+```
+$ arch -arm64 pip3 install *** 
 ```

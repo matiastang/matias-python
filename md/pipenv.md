@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 15:31:08
  * @LastEditors: matiastang
- * @LastEditTime: 2022-08-09 16:20:35
+ * @LastEditTime: 2022-08-09 17:36:15
  * @FilePath: /matias-python/md/pipenv.md
  * @Description: pipenv
 -->
@@ -147,4 +147,39 @@ Resolving dependencies...
 Updated Pipfile.lock (9ff1f9)!
 Installing dependencies from Pipfile.lock (9ff1f9)...
   🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 1/1 — 00:00:00
+```
+
+### `ERROR:: --system is`
+
+```
+pipenv --python 3.10                               
+Usage: pipenv [OPTIONS] COMMAND [ARGS]...
+
+ERROR:: --system is intended to be used for pre-existing Pipfile installation, not installation of specific packages. Aborting.
+```
+可以先用rm（删除虚拟环境）清除之前的操作，再重新install：
+```
+$ pipenv --rm
+Removing virtualenv (/Users/matias/.local/share/virtualenvs/welfare-lottery-scrapy-Qkb1Kj8J)...
+(mt_scrapy)  ~/matias/MT/MTGithub/scrapy/welfare-lottery-scrapy   main ±  pipenv install
+Creating a virtualenv for this project...
+Pipfile: /Users/matias/matias/MT/MTGithub/scrapy/welfare-lottery-scrapy/Pipfile
+Using /Users/matias/.pyenv/versions/3.10.5/bin/python3 (3.10.5) to create virtualenv...
+⠸ Creating virtual environment...created virtual environment CPython3.10.5.final.0-64 in 181ms
+  creator CPython3Posix(dest=/Users/matias/.local/share/virtualenvs/welfare-lottery-scrapy-Qkb1Kj8J, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/matias/Library/Application Support/virtualenv)
+    added seed packages: pip==22.1.2, setuptools==63.1.0, wheel==0.37.1
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+✔ Successfully created virtual environment! 
+Virtualenv location: /Users/matias/.local/share/virtualenvs/welfare-lottery-scrapy-Qkb1Kj8J
+Creating a Pipfile for this project...
+Pipfile.lock not found, creating...
+Locking [dev-packages] dependencies...
+Locking [packages] dependencies...
+Updated Pipfile.lock (e4eef2)!
+Installing dependencies from Pipfile.lock (e4eef2)...
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
 ```
