@@ -1,12 +1,16 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-17 10:35:04
- * @LastEditTime: 2021-09-17 13:36:09
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-29 23:09:14
+ * @LastEditors: tangdaoyong
  * @Description: In User Settings Edit
  * @FilePath: /matias-python/md/python多版本管理.md
 -->
 # python多版本管理
+
+`pyenv``python`版本管理
+`pipenv``可以为我们的项目自动创建和管理一个虚拟环境`
+`Virtualenv`创建`python`虚拟环境
 
 1. 
 使用brew安装pyenv
@@ -20,7 +24,7 @@ pyenv-virtualenv的虚拟环境
 
 ### pipenv
 
-Pipfile 与 Pipfile.lock 是社区拟定的依赖管理文件，用于替代过于简陋的 requirements.txt 文件. 过去大家经常使用virtualenv来创建虚拟环境，通过pip freeze生成requirements.txt文件，然后通过pip install -r requirements.txt进行项目模块的管理与安装。这样的安装存在很多问题，比如每次更新模块后，需要手动的重新生成依赖文件，等等问题
+Pipfile 与 Pipfile.lock 是社区拟定的依赖管理文件，用于替代过于简陋的 requirements.txt 文件. 过去大家经常使用virtualenv来创建虚拟环境，通过`pip freeze`生成`requirements.txt`文件，然后通过`pip install -r requirements.txt`进行项目模块的管理与安装。这样的安装存在很多问题，比如每次更新模块后，需要手动的重新生成依赖文件，等等问题
 
 pipx install pipenv
 // 添加环境变量
