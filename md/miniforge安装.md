@@ -1,8 +1,8 @@
 <!--
  * @Author: matiastang
  * @Date: 2022-08-01 14:59:56
- * @LastEditors: matiastang
- * @LastEditTime: 2022-08-01 17:36:31
+ * @LastEditors: tangdaoyong
+ * @LastEditTime: 2023-03-06 23:38:50
  * @FilePath: /matias-TensorFlow/md/miniforge安装.md
  * @Description: 
 -->
@@ -12,14 +12,29 @@
 
 ## 安装miniforge
 
-```
+```sh
 $ brew install miniforge
 ...
 Linking Binary 'conda' to '/opt/homebrew/bin/conda'
 🍺  miniforge was successfully installed!
 ```
 **注意**安装完成后重启终端
-此时就可以使用`conda insall`安装所需库了，比如`pandas`，输入`conda install pandas`就会帮你自动安装此库
+此时就可以使用`conda install`安装所需库了，比如`pandas`，输入`conda install pandas`就会帮你自动安装此库
+## 使用GitHub中的命令下载
+```sh
+$ curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
+```
+`MD5`校验不通过
+```sh
+WARNING: md5sum mismatch of tar archive
+expected: 930549447a7f4eaccee4012682365a91
+     got: 2af142c23775ff3818e88cc9e0420286
+Unpacking payload ...
+```
+## 下载慢可以用国内的镜像地址
+
+[镜像地址](https://repo.anaconda.com/archive/)
 
 ## 更换镜像源
 
