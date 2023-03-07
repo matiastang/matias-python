@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 15:35:46
  * @LastEditors: matiastang
- * @LastEditTime: 2022-07-29 16:23:46
+ * @LastEditTime: 2023-03-07 17:19:31
  * @FilePath: /matias-python/md/pyenv.md
  * @Description: pyenv
 -->
@@ -487,6 +487,53 @@ wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/
 
 [查看python的版本](https://mirrors.sohu.com/)
 [镜像](http://mirrors.ustc.edu.cn/)
+```
+https://pypi.tuna.tsinghua.edu.cn/simple/   # 清华
+http://pypi.doubanio.com/simple/  # 豆瓣
+http://mirrors.aliyun.com/pypi/simple/  # 阿里云
+http://pypi.hustunique.com/  # 华中理工大学
+http://pypi.sdutlinux.org/ # 山东理工大学
+https://pypi.mirrors.ustc.edu.cn/simple/ # 中国科学技术大学
+http://mirrors.163.com/pypi/simple/ # 网易
+
+清华大学开源镜像站 https://mirrors.tuna.tsinghua.edu.cn/
+网易开源镜像站 http://mirrors.163.com/
+阿里巴巴开源镜像站 https://opsx.alibaba.com/mirror/
+网易开源镜像站http://mirrors.163.com/
+搜狐镜像站（PHP，python）http://mirrors.sohu.com/
+淘宝镜像 https://npm.taobao.org/mirrors/
+腾讯软件源 mirrors.cloud.tencent.com/
+华为开源镜像站：mirrors.huaweicloud.com/
+9.中国科技大学：mirrors.ustc.edu.cn/
+10.北京交通大学：mirror.bjtu.edu.cn/cn/
+11.上海交通大学：ftp.sjtu.edu.cn/
+12.北京理工大学：mirror.bit.edu.cn/web/
+13.浙江大学：http://mirrors.zju.edu.cn
+14.北京理工大学：http://mirror.bit.edu.cn
+15.华中科技大学：mirrors.hust.edu.cn/
+16.豆瓣http://pypi.douban.com/simple/
+17.华中理工大学http://pypi.hustunique.com/simple/
+18.山东理工大学 http://pypi.sdutlinux.org/simple/
+```
+上面选择一个源下载
+```sh
+$ wget https://npm.taobao.org/mirrors/python/3.8.10/Python-3.8.10.tar.xz -P ~/.pyenv/cache/ 
+--2023-03-07 17:18:48--  https://npm.taobao.org/mirrors/python/3.8.10/Python-3.8.10.tar.xz
+Resolving npm.taobao.org (npm.taobao.org)... 114.55.80.225
+Connecting to npm.taobao.org (npm.taobao.org)|114.55.80.225|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://cdn.npmmirror.com/binaries/python/3.8.10/Python-3.8.10.tar.xz [following]
+--2023-03-07 17:18:48--  https://cdn.npmmirror.com/binaries/python/3.8.10/Python-3.8.10.tar.xz
+Resolving cdn.npmmirror.com (cdn.npmmirror.com)... 182.140.196.215, 182.140.196.221, 182.140.196.216, ...
+Connecting to cdn.npmmirror.com (cdn.npmmirror.com)|182.140.196.215|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18433456 (18M) [application/x-xz]
+Saving to: ‘/Users/matias/.pyenv/cache/Python-3.8.10.tar.xz’
+
+Python-3.8.10.tar.xz           100%[====================================================>]  17.58M  12.3MB/s    in 1.4s    
+
+2023-03-07 17:18:50 (12.3 MB/s) - ‘/Users/matias/.pyenv/cache/Python-3.8.10.tar.xz’ saved [18433456/18433456]
+```
 
 pyenv install 3.7.5
 

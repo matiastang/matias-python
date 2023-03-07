@@ -1,14 +1,64 @@
 <!--
  * @Author: matiastang
  * @Date: 2022-08-01 14:59:56
- * @LastEditors: tangdaoyong
- * @LastEditTime: 2023-03-06 23:38:50
- * @FilePath: /matias-TensorFlow/md/miniforge安装.md
+ * @LastEditors: matiastang
+ * @LastEditTime: 2023-03-07 18:42:45
+ * @FilePath: /matias-python/md/miniforge安装.md
  * @Description: 
 -->
 # miniforge
 
 [miniforge官网](https://github.com/conda-forge/miniforge)
+```sh
+$ echo $PATH
+```
+
+重新初始化 shell 环境，执行如下命令
+
+```sh
+exec $SHELL
+```
+
+* `conda list`确认安装了哪个软件包
+```sh
+
+```
+* `conda env list`或`conda info -e`确认当前存在什么虚拟环境
+```sh
+$ conda env list
+# conda environments:
+#
+base                  *  /opt/homebrew/Caskroom/miniforge/base
+mt_scrapy                /opt/homebrew/Caskroom/miniforge/base/envs/mt_scrapy
+mt_tensorflow            /opt/homebrew/Caskroom/miniforge/base/envs/mt_tensorflow
+my_scrapy_3.8.10         /opt/homebrew/Caskroom/miniforge/base/envs/my_scrapy_3.8.10
+```
+* `conda update conda`检查更新当前`conda`
+```sh
+
+```
+* `conda create -n 虚拟环境名称 python=版本号`创建一个虚拟环境，同时设置`python`版本。如：`conda create -n tensorflow python=3.8`
+```sh
+$ conda create -n mt_tensorflow python=3.10
+#
+# To activate this environment, use
+#
+#     $ conda activate mt_tensorflow
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+```
+
+* 激活
+```sh
+ $ conda activate 虚拟环境名称
+```
+
+* 退出
+```sh
+$ conda deactivate
+```
 
 ## 安装miniforge
 
