@@ -2,11 +2,23 @@
  * @Author: matiastang
  * @Date: 2022-08-01 14:59:56
  * @LastEditors: matiastang
- * @LastEditTime: 2023-03-07 18:42:45
+ * @LastEditTime: 2023-03-07 19:26:22
  * @FilePath: /matias-python/md/miniforge安装.md
  * @Description: 
 -->
 # miniforge
+
+mac用的是Pyenv, 我的windows电脑使用Anaconda, linux服务器用miniconda
+
+Anaconda庞大, 全面. 从下载安装到完全配置好可能需要半个小时甚至更长. 但你不需要考虑包之间依赖关系. 不同的环境(例如不同的python版本, 或者是不同语言)的切换, 到一般来说是命令行启动的一众app(例如Jupyter, Spyder)都是GUI, 操作傻瓜上手快. 
+
+Miniconda是部署最快的了, linux服务器登陆上去后, wget一个miniconda.sh, 从安装到开始把代码推送过去开始运行可能只需要几分钟. 
+
+Pyenv非常轻量, 和miniconda类似. 但pyenv只管不同的python环境, 还可以配合pyenv-virtualenv. pyenv后, python的包管理器还是pip, 在数据科学领域, pip也能实现几乎所有安装, 但conda已成为默认选项. 
+
+如果是纯小白, 且系统硬盘不吃紧 -- anaconda
+但凡有经验, 喜欢自己配置环境的 -- miniconda
+如果pip习惯了, 或者从其他语言(例如rbenv)跳过来的话. 了解这一套env怎么用的 -- pyenv
 
 [miniforge官网](https://github.com/conda-forge/miniforge)
 ```sh

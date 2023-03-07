@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 15:35:46
  * @LastEditors: matiastang
- * @LastEditTime: 2023-03-07 17:19:31
+ * @LastEditTime: 2023-03-07 19:20:30
  * @FilePath: /matias-python/md/pyenv.md
  * @Description: pyenv
 -->
@@ -276,6 +276,16 @@ $ pyenv global 3.6.12
 * 查看是否切换成功
 ```
 $ python --version
+```
+
+```
+global、shell、local之间的区别：
+
+        2.1.  global 全局设置
+
+        如果使用此命令，可以看到所有受到pyenv控制的窗口都受到了影响， 所以尽可能不要用root用户来安装pyenv，否则会影响到之前的系统
+        2.2 shell 会话设置（只影响当前的会话）
+        2.3 local 本地设置（只影响所在文件夹）
 ```
 
 ## 错误
