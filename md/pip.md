@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 14:51:42
  * @LastEditors: matiastang
- * @LastEditTime: 2022-07-26 17:35:31
+ * @LastEditTime: 2023-03-07 09:59:35
  * @FilePath: /matias-python/md/pip.md
  * @Description: pip
 -->
@@ -148,6 +148,31 @@ wheel            0.33.1
 ```
 
 ## 使用镜像地址
+
+```sh
+$ pip3 install apscheduler -i https://pypi.tuna.tsinghua.edu.cn/simple
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting apscheduler
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d0/08/952d9570f4897dc2b30166fca5afd3a2cd19b3d408abdb470978484e8a09/APScheduler-3.10.1-py3-none-any.whl (59 kB)
+     |████████████████████████████████| 59 kB 1.7 MB/s
+Collecting tzlocal!=3.*,>=2.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/31/b7/3bc2c1868f27677139b772e4fde95265b93151912fd90eb874827943bfcf/tzlocal-4.2-py3-none-any.whl (19 kB)
+Requirement already satisfied: six>=1.4.0 in /usr/lib/python3/dist-packages (from apscheduler) (1.14.0)
+Collecting pytz
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2e/09/fbd3c46dce130958ee8e0090f910f1fe39e502cc5ba0aadca1e8a2b932e5/pytz-2022.7.1-py2.py3-none-any.whl (499 kB)
+     |████████████████████████████████| 499 kB 920 kB/s
+Requirement already satisfied: setuptools>=0.7 in /usr/lib/python3/dist-packages (from apscheduler) (45.2.0)
+Collecting pytz-deprecation-shim
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/eb/73/3eaab547ca809754e67e06871cff0fc962bafd4b604e15f31896a0f94431/pytz_deprecation_shim-0.1.0.post0-py2.py3-none-any.whl (15 kB)
+Collecting backports.zoneinfo; python_version < "3.9"
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/1a/ab/3e941e3fcf1b7d3ab3d0233194d99d6a0ed6b24f8f956fc81e47edc8c079/backports.zoneinfo-0.2.1-cp38-cp38-manylinux1_x86_64.whl (74 kB)
+     |████████████████████████████████| 74 kB 859 kB/s
+Collecting tzdata; python_version >= "3.6"
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fa/5e/f99a7df3ae2079211d31ec23b1d34380c7870c26e99159f6e422dcbab538/tzdata-2022.7-py2.py3-none-any.whl (340 kB)
+     |████████████████████████████████| 340 kB 2.3 MB/s
+Installing collected packages: tzdata, backports.zoneinfo, pytz-deprecation-shim, tzlocal, pytz, apscheduler
+Successfully installed apscheduler-3.10.1 backports.zoneinfo-0.2.1 pytz-2022.7.1 pytz-deprecation-shim-0.1.0.post0 tzdata-2022.7 tzlocal-4.2
+```
 
 pip install -i 国内镜像地址 包名
 
