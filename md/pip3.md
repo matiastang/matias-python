@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2022-07-26 14:54:18
  * @LastEditors: matiastang
- * @LastEditTime: 2022-08-09 16:45:33
+ * @LastEditTime: 2023-03-07 19:32:57
  * @FilePath: /matias-python/md/pip3.md
  * @Description: pip3
 -->
@@ -59,6 +59,14 @@ wheel            0.33.1
 添加文件系统地址
 ```
 pip3 install matplotlib -i https://pypi.douban.com/simple
+```
+```sh
+$ pip3 install itemadapter -i https://pypi.tuna.tsinghua.edu.cn/simple
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting itemadapter
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f0/42/1e15e8186bf2d1b1990f6bac30f77d98a3b54084ecf4e19c25803d0a4713/itemadapter-0.7.0-py3-none-any.whl (10 kB)
+Installing collected packages: itemadapter
+Successfully installed itemadapter-0.7.0
 ```
 
 ## 安装`arch -arm64`包
