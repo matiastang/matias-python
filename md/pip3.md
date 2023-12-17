@@ -31,6 +31,42 @@ $ pip3 --version
 ```
 curl https://bootstrap.pypa.io/get-pip.py | python3
 ```
+```sh
+$ curl https://bootstrap.pypa.io/get-pip.py | python3      
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2573k  100 2573k    0     0  1323k      0  0:00:01  0:00:01 --:--:-- 1322k
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pip
+  Downloading pip-23.3.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting setuptools
+  Downloading setuptools-69.0.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting wheel
+  Downloading wheel-0.42.0-py3-none-any.whl.metadata (2.2 kB)
+Downloading pip-23.3.2-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 1.6 MB/s eta 0:00:00
+Downloading setuptools-69.0.2-py3-none-any.whl (819 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 819.5/819.5 kB 272.2 kB/s eta 0:00:00
+Downloading wheel-0.42.0-py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.4/65.4 kB 177.8 kB/s eta 0:00:00
+Installing collected packages: wheel, setuptools, pip
+  WARNING: The script wheel is installed in '/home/tdy/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/tdy/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-23.3.2 setuptools-69.0.2 wheel-0.42.0
+```
+`zsh`中添加如下配置
+```sh
+# pip3
+export PATH="/home/tdy/.local/bin:$PATH"
+```
+* 刷新
+```sh
+source .zshrc
+tdy@tangdaoyong ~ % pip3 -V
+pip 23.3.2 from /home/tdy/.local/lib/python3.10/site-packages/pip (python 3.10)
+```
 查看相应的包
 ```
 pip3 list
